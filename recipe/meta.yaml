@@ -12,12 +12,13 @@ source:
 build:
   skip: True  # [win]
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   build:
     - {{ compiler("cxx") }}
     - {{ compiler("fortran") }}
+    - {{ stdlib("c") }}
     - cmake >=3.15
     - make
   host:
