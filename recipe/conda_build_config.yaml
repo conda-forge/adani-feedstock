@@ -1,0 +1,3 @@
+channel_sources:
+  - https://conda.anaconda.org/conda-forge
+  - https://repo.anaconda.com/pkgs/main
