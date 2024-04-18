@@ -10,15 +10,12 @@ source:
   sha256: 21d408317abe2b438a6c15d6eeaff046324eb02fc7c37f8cc489ac3261e43881
 
 build:
-  skip: true  # [win]
+  skip: True  # [win]
   script: {{ PYTHON }} -m pip install . -vv
   number: 1
 
 requirements:
   build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - pybind11                               # [build_platform != target_platform]
     - {{ compiler("cxx") }}
     - {{ compiler("fortran") }}
     - {{ stdlib("c") }}
