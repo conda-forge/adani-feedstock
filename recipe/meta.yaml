@@ -27,7 +27,7 @@ requirements:
     - pybind11 >=2.9.2
     - scikit-build
     - versioneer ==0.29
-    - gsl >=2.7
+    - gsl >=2.7::defaults
     - libblas
   run:
     - python
