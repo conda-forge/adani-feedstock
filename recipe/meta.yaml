@@ -1,5 +1,5 @@
 {% set name = "adani" %}
-{% set version = "1.0.2" %}
+{% set version = "1.0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/adani-{{ version }}.tar.gz
-  sha256: 21d408317abe2b438a6c15d6eeaff046324eb02fc7c37f8cc489ac3261e43881
+  sha256: 003b2c202fbb67bf766e25850cdb74199a8ce537a0f3a141a43c5b7d068d0e1d
 
 build:
-  skip: True  # [win]
+  skip: true  # [win]
   script: {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 0
 
 requirements:
   build:
