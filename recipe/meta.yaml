@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/adani-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/adani-{{ version }}.tar.gz
   sha256: 003b2c202fbb67bf766e25850cdb74199a8ce537a0f3a141a43c5b7d068d0e1d
 
 build:
