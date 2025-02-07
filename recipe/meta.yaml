@@ -29,6 +29,7 @@ requirements:
     - versioneer ==0.29
     - gsl >=2.8
     - libblas
+    - setuptools
   run:
     - python
 
