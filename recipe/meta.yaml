@@ -6,16 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/adani-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/adani-{{ version }}.tar.gz
   sha256: 003b2c202fbb67bf766e25850cdb74199a8ce537a0f3a141a43c5b7d068d0e1d
 
 build:
   skip: true  # [win]
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 2
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - pybind11                               # [build_platform != target_platform]
+    - pkg-config                             # [build_platform != target_platform]
     - {{ compiler("cxx") }}
     - {{ compiler("fortran") }}
     - {{ stdlib("c") }}
@@ -27,8 +31,9 @@ requirements:
     - pybind11 >=2.9.2
     - scikit-build
     - versioneer ==0.29
-    - gsl <2.7.1
+    - gsl >=2.8
     - libblas
+    - setuptools
   run:
     - python
 
